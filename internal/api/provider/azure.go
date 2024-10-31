@@ -13,6 +13,9 @@ import (
 	"golang.org/x/oauth2"
 )
 
+// Azure Tenant ID for UM6P
+const TenantId = "39626157-a047-4689-87a2-6fa645cb5cb7"
+
 const IssuerAzureCommon = "https://login.microsoftonline.com/common/v2.0"
 const IssuerAzureOrganizations = "https://login.microsoftonline.com/organizations/v2.0"
 
@@ -21,7 +24,8 @@ const IssuerAzureOrganizations = "https://login.microsoftonline.com/organization
 const IssuerAzureMicrosoft = "https://login.microsoftonline.com/9188040d-6c67-4c5b-b112-36a304b66dad/v2.0"
 
 const (
-	defaultAzureAuthBase = "login.microsoftonline.com/common"
+	// defaultAzureAuthBase = "login.microsoftonline.com/common"
+	defaultAzureAuthBase = "login.microsoftonline.com/" + TenantId
 )
 
 type azureProvider struct {
